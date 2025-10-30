@@ -2,14 +2,14 @@
 // Method signature is invisible, and the file contains the method body.
 
 using CLI.UI;
-using InMemoryRepositories;
+using FileRepositories;
 using RepositoryContracts;
 
 Console.WriteLine("Starting CLI app...");
 
-IUserRepo userRepo = new UserInMemoryRepo();
-ICommentRepo commentRepo = new CommentInMemoryRepo();
-IPostRepo postRepo = new PostInMemoryRepo();
+IUserRepo userRepo = new UserFileRepo();
+ICommentRepo commentRepo = new CommentFileRepo();
+IPostRepo postRepo = new PostFileRepo();
 
 // inject into CLI App
 var cliApp = new CliApp(userRepo, postRepo, commentRepo);
